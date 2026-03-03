@@ -265,6 +265,17 @@ font-weight: 600;
   bottom: 0;
   transform: rotate(180deg); /* flip for bottom */
 }
+@media(max-width:550px)
+{
+  .cloud-top {
+  display: none;
+}
+
+/* Bottom cloud */
+.cloud-bottom {
+  display: none;
+}
+}
 
 /* Ensure content above overlay */
 .hero-content,
@@ -1506,8 +1517,9 @@ font-weight: 600;
 /* Section */
 .kpg-programs{
     position:relative;
-    padding:100px 0 60px;
+    padding:80px 0 50px;
     background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+    overflow:hidden; /* prevents horizontal scroll */
 }
 
 .kpg-title{
@@ -1515,32 +1527,34 @@ font-weight: 600;
     font-weight:700;
     color:black;
     margin-bottom:20px;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 
 .kpg-subtitle{
     text-align:center;
     color:#666;
     max-width:650px;
-    margin:0 auto 60px;
-    font-family: 'Poppins', sans-serif;
+    margin:0 auto 50px;
+    font-family:'Poppins', sans-serif;
 }
 
 /* Program card */
 .kpg-card{
-    background:url('images/backin.png');
+    background:url('images/backin.png') no-repeat center;
+    background-size:cover; /* important fix */
     border-radius:25px;
-    padding:35px;
+    padding:30px;
     box-shadow:0 15px 40px rgba(0,0,0,0.08);
     transition:0.4s ease;
     position:relative;
     overflow:hidden;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins', sans-serif;
+    width:100%; /* prevents overflow */
 }
 
 .kpg-card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 25px 60px rgba(0,0,0,0.15);
+    transform:translateY(-10px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
 /* Glow hover */
@@ -1559,13 +1573,14 @@ font-weight: 600;
 
 /* Icon */
 .kpg-icon{
-    width:80px;
+    width:70px;
+    max-width:100%; /* prevent overflow */
     animation:kpgFloatIcon 4s infinite ease-in-out;
 }
 
 @keyframes kpgFloatIcon{
     0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
+    50%{transform:translateY(-8px);}
 }
 
 /* Badge */
@@ -1582,10 +1597,11 @@ font-weight: 600;
 /* Feature icons row */
 .kpg-feature-row{
     display:flex;
-    gap:15px;
+    gap:10px;
     margin-top:15px;
     flex-wrap:wrap;
 }
+
 .kpg-feature{
     background:#f1f5f9;
     padding:8px 12px;
@@ -1597,11 +1613,11 @@ font-weight: 600;
 .kpg-cta{
     background: linear-gradient(135deg, #bc1111, #ff730f);
     color:white;
-    padding:40px;
+    padding:35px 20px; /* reduced side padding */
     border-radius:20px;
     text-align:center;
-    margin-top:60px;
-    box-shadow: 2px 2px 2px black;
+    margin-top:50px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
 }
 
 .kpg-cta button{
@@ -1609,9 +1625,21 @@ font-weight: 600;
     padding:10px 25px;
 }
 
-/* Responsive */
+/* ✅ MOBILE FIX */
 @media(max-width:768px){
-    .kpg-card{ margin-bottom:30px; }
+
+    .kpg-card{
+        padding:20px;
+        border-radius:20px;
+    }
+
+    .kpg-cta{
+        padding:25px 15px;
+    }
+
+    .kpg-feature-row{
+        gap:8px;
+    }
 }
 .support-section{
     position:relative;
