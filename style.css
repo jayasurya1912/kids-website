@@ -896,7 +896,7 @@ font-weight: 600;
 
 /* Responsive */
 @media(max-width:768px){
-  .footer{ text-align:center; }
+  .footer{ text-align:start; }
   .social-icons{ justify-content:center; }
 }
 .testimonial-section{
