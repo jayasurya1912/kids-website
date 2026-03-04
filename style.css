@@ -149,6 +149,9 @@ font-weight: 600;
 .social-icon:hover {
   color: #fca311;
 }
+.topbar span{
+  white-space: nowrap;
+}
 /* Container */
 .hero-buttons {
   display: flex;
@@ -847,7 +850,7 @@ font-weight: 600;
 }
 
 .footer a:hover{
-  text-decoration:underline;
+  text-decoration:none;
 }
 
 .footer-logo{
@@ -2388,4 +2391,17 @@ font-weight: 600;
 #kk-preloader.hide {
   opacity: 0;
   visibility: hidden;
+}
+.openin
+{
+  width: 500px;
+}
+@media(max-width:550px)
+{
+  .openin
+  {
+    width: 300px;
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
 }
